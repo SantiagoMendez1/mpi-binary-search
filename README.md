@@ -23,3 +23,20 @@ El código comienza generando una lista aleatoria de números y la divide entre 
 Luego, se genera una clave aleatoria de la lista ordenada completa, que se transmite a todos los procesos utilizando `MPI_Bcast`. El proceso con rango 0 realiza una búsqueda binaria (`binary_search`) de esta clave en la lista ordenada completa.
 
 Finalmente, se calcula el tiempo tomado para la ordenación y la búsqueda binaria, y se muestra el resultado junto con la lista ordenada y la clave aleatoria generada.
+## ejecucion
+
+dentro de guane, se realiza la carga del modulo MPI
+
+```bash
+  module av
+  module load devtools/mpi/openmpi/4.0.2
+```
+reserva interactiva 
+```bash
+  srun -n 4 --pty /bin/bash
+```
+compilacion y ejecucion
+```bash
+  mpicc mpi_BinarySearch.c -o mpi_BinarySearch
+  mpirun -np 4 mpi_BinarySearch
+```
