@@ -40,10 +40,11 @@ compilacion y ejecucion
   mpicc mpi_BinarySearch.c -o mpi_BinarySearch
   mpirun -np 4 mpi_BinarySearch
 ```
-## Análisis de ejecución(tiempo segundos)
+## Análisis de ejecución
     
-| Secuencial |   OPenMP  |     MPI    |
-|------------|-----------|------------|
-| 0,000027   | 0.000005  | 0.000003   |
+| Secuencial (s) |   OPenMP  (s)  |     MPI (s)   |
+|----------------|----------------|---------------|
+|   0,000027     |    0.000005    |   0.000003    |
 
 ## Conclusion
+En la compilacion del programa se jugo con el tipo de banderar o1, o2, o3, sin embargo el cambio en muy pocos segundo no fue tan relevante de resalta. Por otro lado, en el tiempo que se evidencia en la tabla anterio, podemos observar que para la medicion especifica del ordenamiento de la lista, el que resulta mas eficaz es el que usan MPI. Podemo concluir que es evidente que MPI se puede usar para aplicaciones que necesitan un gran paralelismo ya que garantiza la distribución eficiente del trabajo en entornos distribuidos,
